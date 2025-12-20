@@ -1,0 +1,49 @@
+﻿body
+{
+    
+}
+
+ol 
+{
+   
+    list-style: upper-roman;
+}
+
+ol > li > ul 
+{
+  list-style: lower-latin;
+ }
+.checkmark,
+.check-fiolet,
+.circle-red,
+.circle-orange,
+.not-done {
+    list-style: none !important;
+}
+.checkmark li::before {
+    content: "☑";
+    color:green;
+    font-weight: bold;
+}
+
+.check-fiolet li::before {
+    content: "☑";
+    color:mediumpurple;
+    font-weight: bold;
+}
+
+.circle-red > li::before {
+    content: "●";
+    color: red;
+}
+
+.circle-orange > li::before {
+    content: "●";
+    color: orange;
+}
+
+.not-done li::before {
+    content: "╳";
+    color:gray;
+    font-weight: bold;
+}

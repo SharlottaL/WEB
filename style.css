@@ -22,3 +22,11 @@ figure
     font-style:italic;
     font-weight:100;
 }
+ol
+{
+    list-style:upper-roman;
+}
+ul
+{
+     /*list-style:armenian;*/
+}
