@@ -1,0 +1,81 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap');
+body {
+    font-size: 24px;
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    /*font-family:'Lilex', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    background-image: linear-gradient(to bottom right, lightskyblue, pink);
+    background-attachment: fixed;
+}
+
+h3 {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+p {
+    text-align: justify;
+    text-indent: 48px;
+}
+
+figure {
+    text-align: center;
+    font-style: italic;
+    font-weight: 100;
+}
+
+ol {
+    list-style: upper-roman;
+}
+
+ul {
+    list-style: arabic-indic;
+}
+a{
+    color:darkblue;
+    /*padding:4px;*/
+}
+a:visited
+{
+    color:darkcyan;
+}
+    a:hover {
+        font-weight: 800;
+       /* font-size: 32px;*/
+/*        padding:0;*/
+        color: deeppink;
+    }
+  /*  li{
+        padding:4px;
+    }
+    li:hover{
+        padding:0px;
+    }*/
+/*.table-of-contents, #table-of-contents {
+    background-image: linear-gradient(to bottom right, darkgreen, lightblue);
+}*/
+.header {
+    text-shadow:10px 10px 5px grey;
+}
+ol > li > a,  ol > li > a:visited
+{
+    font-weight:1000;
+}
+ol>li>ul>li>a,ol>li>ul>li>a:visited
+{
+    font-weight:700;
+}
+ol>li ~ol>li
+{
+    color:darkgrey;
+}
+table {
+    margin: 0 auto;
+    border: solid 2px;
+    border-spacing: 0;
+}
+th,td
+{
+    border:solid 1px;
+    
+}

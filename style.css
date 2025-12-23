@@ -1,32 +1,10 @@
 ﻿
 @import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap');
 
-body {
-    font-size: 18px;
-    font-family: "Linex";
-    font-weight:200;
-}
-h3
+body 
 {
-    font-style:italic;
-    text-decoration:underline;
-}
-p 
-{
-    text-align: justify;
-    text-indent: 20px;
-}
-figure
-{
-    text-align:center;
-    font-style:italic;
-    font-weight:100;
-}
-ol
-{
-    list-style:upper-roman;
-}
-ul
-{
-     /*list-style:armenian;*/
+    font-family: Lilex;
+    font-size: 48px;
+    background-image: linear-gradient(to bottom right, lightskyblue, pink);
+    background-attachment: fixed;
 }
