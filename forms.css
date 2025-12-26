@@ -1,0 +1,11 @@
+﻿body
+{
+}
+form{
+    width:25%;
+}
+form > div{
+    text-align:center;
+    border:solid 1px;
+    margin:10px;
+}

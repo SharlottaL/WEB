@@ -65,17 +65,45 @@ ol>li>ul>li>a,ol>li>ul>li>a:visited
 {
     font-weight:700;
 }
-ol>li ~ol>li
+ol>li ~ ol>li
 {
     color:darkgrey;
 }
+#margin-and-padding {
+    border: solid 1px;
+    /*margin: 20px 50px 150px 250px;*/
+    margin: 20px 50px;
+    padding: 50px;
+}
 table {
-    margin: 0 auto;
+    margin: 15px auto;
     border: solid 2px;
     border-spacing: 0;
+    box-shadow:15px 15px 0 0 black;
+}
+table > caption 
+{
+    color:aliceblue;
+}
+tr:hover{
+    box-shadow:inset -0px -5px 10px 0px aliceblue;
 }
 th,td
 {
     border:solid 1px;
     
+}
+thead  th{
+    border:solid 1px black;
+    padding:15px 25px;
+    background-color:darkslateblue;
+    color:aquamarine;
+
+}
+tbody th
+{
+    text-align:left;
+}
+td{
+    text-align:center;
 }
