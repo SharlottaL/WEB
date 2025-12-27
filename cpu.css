@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap');
 body {
     font-size: 24px;
-    font-family: 'Roboto Condensed';
+    font-family: 'Lilex';
     font-weight: 300;
     /*font-family:'Lilex', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     background-image: linear-gradient(to bottom right, lightskyblue, pink);
