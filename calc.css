@@ -1,0 +1,95 @@
+﻿body {
+    background-image: url("fon5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Tahoma;
+    text-shadow: 1px 1px black;
+}
+
+.main-window {
+    border: solid 1px;
+    width: 400px;
+    height: 360px;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.title-bar {
+    width: 100%;
+    height: 38px;
+    background-color: #849A28;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar-left-side {
+    display: flex;
+}
+
+#app-icon {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+}
+form {
+   display: flex;
+    justify-content: center;
+}
+#input {
+    width: 375px;
+    height: 30px;
+    justify-content: center;
+    text-align: right;
+}
+ #input::placeholder {
+      font-weight: bold;
+      color: black;
+     font-size:20px;
+  }
+.title-bar button {
+    width: 24px;
+    height: 24px;
+}
+.menu
+{
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.three-bar button {
+
+    width: 95px;
+    height: 40px;
+    margin: 5px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    margin-left: 5px;
+}
+button {
+    width: 55px;
+    height: 40px;
+    margin: 5px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 5px auto;
+    border-radius: 5px;
+    margin-left: 6px;
+}
+.client-rect {
+  
+    width: 100%;
+    height: 322px;
+}
+
