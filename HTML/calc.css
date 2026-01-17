@@ -8,13 +8,12 @@
 }
 
 .main-window {
-    /*border: solid 1px;*/
+    /*border:solid 1px;*/
     width: 400px;
     height: 360px;
     position: absolute;
     left: 25px;
     top: 25px;
-
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -30,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*padding: 5px, 15px;*/
+    /*padding: 5px 15px;*/
 }
 
 .title-bar-left-side {
@@ -38,16 +37,15 @@
     display: flex;
 }
 
-.title-bar-right-side
-{
-    margin:0px 8px;
+.title-bar-right-side {
+    margin: 0px 8px;
 }
 
 #app-icon {
-    width: 20px;
-    height: 20px;
-    margin: 2px;
+    width: 24px;
+    height: 24px;
 }
+
 .control-button, .control-button:disabled, .control-button:disabled:hover {
     width: 24px;
     height: 24px;
@@ -71,8 +69,6 @@
     }
 
     .control-button:disabled, .control-button:disabled:hover {
-        /*background-image: linear-gradient(to bottom right, #55A1FF, #0025B5);
-        box-shadow: inset 1px 1px 3px 0px #77A1F5;*/
         color: lightgray;
         border-color: lightgray;
     }
@@ -100,8 +96,6 @@
     background-color: rgb(235,233,216);
     width: 100%;
     height: 322px;
-    /*border: solid 5px;
-    border-image: linear-gradient(to right, #0033D7, #1969F4, #0033D7);*/
     display: flex;
     justify-content: space-between;
 }
@@ -131,35 +125,83 @@
         }
 
 .display {
-    width: 100%;
+    width: 384px;
     display: flex;
     justify-content: center;
     margin: 5px 0;
 }
-.display > input[type=text] 
-{
-    width: 91%;
-    text-align: right;
+
+    .display > input[type=text]
+    {
+        width: 91%;
+        text-align: right;
+    }
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 5px;
 }
 
 .memory-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-    .memory-buttons > button {
-        width: 48px;
-        height: 44px;
-        margin: 5px;
+.buttons button {
+    width: 48px;
+    height: 40px;
+    border: solid 1px darkblue;
+    border-radius: 5px;
+    box-shadow: inset 0 -2px 5px 1px lightgray;
+}
+
+    .buttons button:hover {
+        box-shadow: inset 0px 0px 5px 0px #FFAA00;
     }
 
+    .buttons button:active {
+        background-color: lightgray;
+        box-shadow: inset 0px 0px 5px 0px gray;
+    }
+
+.memory-buttons > button, .control-buttons > button {
+    color: red;
+    margin: 5px;
+}
+
 .battery {
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
     box-shadow: inset 1px 1px 0px 0px gray;
     border-right: solid 1px white;
     border-bottom: solid 1px white;
 }
+
+.control-and-digital-buttons {
+    width: 80%;
+}
+
+.control-buttons > button {
+    width: 86px;
+}
+
+.digital-buttons {
+    display: grid;
+    grid-template-rows: repeat(4, 40px);
+    grid-template-columns: repeat(5, 48px);
+    grid-gap: 9.9px 11.99px;
+    padding: 3.5px;
+}
+
+    .digital-buttons > button {
+        color: darkblue;
+    }
+
+    .digital-buttons > .operational-button {
+        color: red;
+    }
 
 .border-left {
     width: 5px;
