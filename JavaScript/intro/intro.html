@@ -16,7 +16,15 @@
 
     <details>
         <summary>Power</summary>
-        ......
+        <input type="number" id="power-source-osnov" min=0 onchange="Power()" />
+        <input type="number" id="power-source-step" min=0 onchange="Power()" />
+        <div id="power-result"></div>
+    </details>
+
+    <details>
+        <summary>Fibonachi</summary>
+        <input type="number" id="fibonachi-source" min=0 onchange="Fibonachi()" />
+        <div id="fibonachi-result"></div>
     </details>
 
     <script src="script.js"></script>
