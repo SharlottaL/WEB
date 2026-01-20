@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Geometry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <details>
+        <summary>Figures</summary>
+        <input type="number" id="figure-source" min=0 onchange="Figures()" />
+        <div id="figure-result" style="white-space: pre; font-family: monospace;"></div>
+    </details>
+
+    <details>
+        <summary>Chess</summary>
+        <input type="number" id="chess-source" min=0 onchange="Chess()" />
+        <div id="chess-result" style="white-space: pre; font-family: monospace;"></div>
+    </details>
+    <details>
+        <summary>Pascal</summary>
+        <input type="number" id="pascal-source" min=0 onchange="Pascal()" />
+        <div id="pascal-result" style="white-space: pre; text-align: center; font-family: monospace;"></div>
+    </details>
+    <script src="geometry.js"></script>
+</body>
+</html>
