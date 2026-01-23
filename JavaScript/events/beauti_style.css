@@ -1,0 +1,51 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+body {
+    background-image: url("img/b.jpg");
+    /*    background-size: cover;*/
+    background-attachment: fixed;
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:180px;
+}
+h1 {
+    font-size: 260px;
+    position: absolute;
+    bottom: 80px; 
+    right: 100px; 
+    text-align: right;
+    color: #3C5E82;
+    z-index: 2; 
+}
+
+h2 {
+    font-size: 260px;
+    position: absolute;
+    bottom: 50px; 
+    right: 70px; 
+    text-align: right;
+    color: black; 
+    z-index: 1; 
+}
+label {
+    font-size: 100px;
+}
+#day-of-week {
+    font-size: 100px;
+    margin-left: 150px;
+}
+#current-date {
+    font-size: 80px;
+    margin-left: 65px;
+    margin-bottom: -50px;
+}
+#hours, #minutes, #seconds {
+    font-size: 120px;
+}
+#current-time {
+    margin-bottom: -80px;
+    margin-left:25px;
+}
+#show-date, #show-weekday,label {
+    color: white;
+}
