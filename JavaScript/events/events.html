@@ -6,15 +6,22 @@
     <title>Events</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <body class="white">
-        <div id="header">
-            <div>Header</div>
-            <div onclick="switchBackground()">
-                <img src="img/moon.png" id="switch-background">
+<body class="white">
+    <div id="header">
+        <div>Header</div>
+        <span id="mouse"></span>
+        <div style="display:flex;">
+            <label for="delay">Delay:</label>
+            <input type="number" id="delay" min="1" max="5" value="3" />
+            <div onclick="switchBackground()" id="switch-background">
+                <!--<img src="img/moon.png" >-->
             </div>
         </div>
-     
-        <h1>Events</h1>
+    </div>
+
+    <h1>Events</h1>
+    <details>
+        <summary>Image & Color</summary>
         <div id="photo-and-color">
             <div id="select-photo" class="block">
                 <div id="photo-container">
@@ -22,13 +29,82 @@
                 </div>
                 <input type="file" id="image-file" onchange="setImage()">
             </div>
-         
+
             <br>
             <div id="select-color" class="block">
                 <input type="color" id="choose-color" onchange="setBackground()"><label for="choose-color">Выберите Ваш любимый цвет</label>
                 <div id="color-sample"></div>
             </div>
         </div>
-        <script src="functions.js"></script>
-    </body>
+    </details>
+    <details>
+        <summary>Arrays</summary>
+        <h2>Arrays</h2>
+        <script>
+            let arr = [3,5,8,13,21];
+            console.log(arr);
+            let values = [true, false, '+', 3.14, "Hello", 2.7];
+            console.log(values);
+            console.table(values);
+            document.write(`<pre>`);
+            for (let i = 0; i < arr.length; i++)
+            {
+            document.write(`${arr[i]}\t`);
+            }
+            document.write(`</pre>`);
+
+            let arr2 =
+            [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9],
+            ];
+            document.write(`<pre>`);
+            //foreach (let i : arr2) document.write(`${i}`);
+            arr2.forEach((element) => document.write(element));
+            document.writeln();
+            for (let i = 0; i < arr2.length; i++)
+            {
+            for (let j = 0; j < arr2[i].length; j++)
+            {
+            document.write(`${arr2[i][j]}\t`);
+            }
+            document.writeln();
+            }
+            document.write(`</pre>`);
+            console.log(arr2);
+            console.table(arr2);
+
+            let jaggedArr =
+            [
+            [3, 5, 8, 13, 21],
+            ["Хорошо", "живет", "на", "свете", "Винни", "Пух"],
+            [34, 55, 89]
+            ];
+            console.log(jaggedArr);
+            console.table(jaggedArr);
+        </script>
+
+    </details>
+    <hr>
+    <div id="full-time"></div>
+    <div id="clock">
+        <h2>Time</h2>
+        <div id="current-time">
+            <span id="hours"></span>:
+            <span id="minutes"></span>:
+            <span id="seconds"></span>
+        </div>
+        <div id="current-date">
+            <span id="years"></span>.
+            <span id="months"></span>.
+            <span id="days"></span>
+        </div>
+        <div id="day-of-week"></div>
+        <input type="checkbox" id="show-date"><label for="show-date">Показать дату</label>
+        <input type="checkbox" id="show-weekday"><label for="show-weekday">Показать день недели</label>
+    </div>
+    <li><a href="beautiful_clock.html">Beautiful Clock</a></li>
+    <script src="functions.js"></script>
+</body>
 </html>
