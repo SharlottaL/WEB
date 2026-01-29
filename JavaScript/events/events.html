@@ -135,9 +135,19 @@
             <div id="seconds-marker" class="time-marker">Seconds</div>
         </div>
     </div>
+    <select onchange="document.getElementById('player').src=this.value; document.getElementById('player').play()">
+        <option value=""> Выберите песню</option>
+        <option value="sound/Europe - Final Countdown.mp3">Europe - Final Countdown</option>
+        <option value="sound/Linkin Park - In the End (Album Version).mp3">Linkin Park - In the End (Album Version)</option>
+        <option value="sound/Hurts_-_Stay_(SkySound.cc).mp3">Hurts_-_Stay_(SkySound.cc)</option>
+        <option value="sound/Falco - Out Of The Dark.mp3">Falco - Out Of The Dark</option>
+        <option value="sound/Nightwish - Walking In The Air.mp3">Nightwish - Walking In The Air</option>
+        <option value="sound/Dan Korshunov - Краснодарский край.mp3">Dan Korshunov - Краснодарский край</option>
+    </select>
+
     <div>
         <audio controls id="player" style="width:100%">
-            <source src="sound\Europe - Final Countdown.mp3">
+            <!--<source src="sound\Europe - Final Countdown.mp3">-->
         </audio>
     </div>
     <script src="functions.js"></script>
