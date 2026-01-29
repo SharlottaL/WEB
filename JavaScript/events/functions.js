@@ -13,6 +13,8 @@ function setBackground()
 {
     let color_tool = document.getElementById('choose-color');
     let color = color_tool.value;
+    //document.body.style.backgroundImage = "none";
+    //document.body.style.backgroundColor = color;
     document.getElementById('color-sample').style.backgroundColor = inverse_color;
     document.getElementById('color-sample').style.width = "200px";
     document.getElementById('color-sample').style.height = "200px";
@@ -87,32 +89,33 @@ document.getElementById("btn-start").onclick = function startCountdownTimer()
         btnStart.value = "Start";
         targetDate.disabled = targetTime.disabled = false;
         clearTimeout(tickCountdown);
+        resetDisplay();
     }
-
-    let display = document.getElementById("display");
-  
-    let append = document.createElement("div");
-    append.id = "appended";
-    append.innerHTML = "Appended element";
-    display.append(append);
-
-    let prepend = document.createElement("div");
-    prepend.id = "prepended";
-    prepend.innerHTML = "Prepended element";
-    display.prepend(prepend);
-  
-    let before = document.createElement("h3");
-    before.id = "before-display";
-    before.innerHTML = "Time left since the beginning";
-    display.before(before);
-   
-    let after = document.createElement("h4");
-    after.id = "paradise";
-    after.innerHTML = "muzlo";
-    display.after(after);
+    //let display = document.getElementById("display");
+    ////////////////////////////////////////
+    //let append = document.createElement("div");
+    //append.id = "appended";
+    //append.innerHTML = "Appended element";
+    //display.append(append);
+    ////////////////////////////////////////
+    //let prepend = document.createElement("div");
+    //prepend.id = "prepended";
+    //prepend.innerHTML = "Prepended element";
+    //display.prepend(prepend);
+    ////////////////////////////////////////
+    //let before = document.createElement("h3");
+    //before.id = "before-display";
+    //before.innerHTML = "Time left since the beginning";
+    //display.before(before);
+    ////////////////////////////////////////
+    //let after = document.createElement("h4");
+    //after.id = "paradise";
+    //after.innerHTML = "muzlo";
+    //display.after(after);
 }
 function tickCountdown()
 {
+    if (document.getElementById("btn-start").value === "Start") return;
     let now = new Date();
 
     let targetDateControl = document.getElementById("target-date");
@@ -120,7 +123,6 @@ function tickCountdown()
 
     let targetDateValue = targetDateControl.valueAsDate;
     let targetTimeValue = targetTimeControl.valueAsDate;
-  
     targetDateValue.setHours(targetDateValue.getHours() + targetDateValue.getTimezoneOffset() / 60);
     targetTimeValue.setHours(targetTimeValue.getHours() + targetTimeValue.getTimezoneOffset() / 60);
 
@@ -133,15 +135,16 @@ function tickCountdown()
     document.getElementById("target-time-value").innerHTML = targetTimeValue;
     document.getElementById("current-time-value").innerHTML = now;
 
-
     let duration = targetTimeValue - now;
     document.getElementById("duration").innerHTML = duration;
 
     let timestamp = Math.trunc(duration / 1000);
+    document.getElementById("signature").innerHTML = timestamp > 0 ? "Времени осталось" : "Времени прошло";
+    if (timestamp < 0) timestamp = -timestamp;
     document.getElementById("timestamp").innerHTML = timestamp;
 
     const SECONDS_PER_MINUTE = 60;
-    const SECONDS_PER_HOUR = 3600;  
+    const SECONDS_PER_HOUR = 3600; 
     const SECONDS_PER_DAY = 86400;
     const SECONDS_PER_WEEK = SECONDS_PER_DAY * 7;
     const DAYS_PER_MONTH = 365.25 / 12;
@@ -157,16 +160,18 @@ function tickCountdown()
         date = date % SECONDS_PER_YEAR;
         let years_unit = document.getElementById("years-unit");
         if (years_unit == null) {
-            let display = document.getElementById("display");
-            display.prepend(createTimeBlock("years", addLeadingZero(years)));
+
+            let years_block = createTimeBlock("years", years);
+            let hours_block = document.getElementById("hours-unit").parentElement;
+            hours_block.before(years_block);
         }
         else years_unit.innerHTML = addLeadingZero(years);
     }
     else removeTimeBlock("years");
+
     let months = Math.floor(date / SECONDS_PER_MONTH);
-    if (months > 0)
-    {
-      //  let display = document.getElementById("display");
+    if (months > 0) {
+        //let display = document.getElementById("display");
         date = date % SECONDS_PER_MONTH;
         let months_unit = document.getElementById("months-unit");
         if (months_unit == null) {
@@ -179,12 +184,10 @@ function tickCountdown()
     else removeTimeBlock("months");
 
     let weeks = Math.floor(date / SECONDS_PER_WEEK);
-    if(weeks > 0)
-    {
-        let weeks_unit = document.getElementById("weeks-unit");
+    if (weeks > 0) {
         date = date % SECONDS_PER_WEEK;
-        if(weeks_unit == null)
-        {
+        let weeks_unit = document.getElementById("weeks-unit");
+        if (weeks_unit == null) {
             weeks_block = createTimeBlock("weeks", addLeadingZero(weeks));
             let hours_block = document.getElementById("hours-unit").parentElement;
             hours_block.before(weeks_block);
@@ -193,14 +196,11 @@ function tickCountdown()
     }
     else removeTimeBlock("weeks");
 
-
     let days = Math.floor(date / SECONDS_PER_DAY);
-
-    if(days > 0)
+    if (days > 0)
     {
         let days_unit = document.getElementById("days-unit");
-        if(days_unit == null)
-        {
+        if (days_unit == null) {
             days_block = createTimeBlock("days", addLeadingZero(days));
             let hours_block = document.getElementById("hours-unit").parentElement;
             hours_block.before(days_block);
@@ -209,7 +209,6 @@ function tickCountdown()
     }
     else removeTimeBlock("days");
 
-    ///////////////////////////////////////////////////////////////
     let hours = Math.floor(time_of_day / SECONDS_PER_HOUR);
     if (hours > 0) time_of_day = (time_of_day % (SECONDS_PER_HOUR));
 
@@ -222,8 +221,14 @@ function tickCountdown()
     document.getElementById("minutes-unit").innerHTML = addLeadingZero(minutes);
     document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
-    if (timestamp > 0 && document.getElementById("btn-start").value === "Stop")
+    //if (timestamp > 0 && document.getElementById("btn-start").value === "Stop")
+    if (document.getElementById("btn-start").value === "Stop")
         setTimeout(tickCountdown, 100);
+    if (timestamp == 0)
+    {
+        let player = document.getElementById("player");
+        player.play();
+    }
 }
 
 function createTimeBlock(name, value)
@@ -256,4 +261,14 @@ function removeTimeBlock(name)
         let display = block.parentElement;
         display.removeChild(block);
     }
+}
+function resetDisplay()
+{
+    let display = document.getElementById("display");
+    console.log(display.children.length);
+    let children = display.children;
+    console.log(children);
+    console.log(display.children[0]);
+    while (display.children[0].children[0].id != "hours-unit")
+        display.children[0].remove();
 }
