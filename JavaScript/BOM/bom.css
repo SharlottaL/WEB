@@ -1,0 +1,20 @@
+﻿body
+{
+}
+.block
+{
+    width:800px;
+    height:8vh;
+    border:solid 1px;
+    display:flex;
+    justify-content:space-between;
+    font-size:32px;
+    margin:25px;
+}
+.block > div
+{
+    padding:5px;
+}
+button{
+    height:8vh;
+}
